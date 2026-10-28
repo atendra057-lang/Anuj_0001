@@ -41,7 +41,7 @@ export function PhotographyPackagesSection() {
           />
         </div>
 
-        {/* Three Packages Grid */}
+        {/* Three Packages Grid: Light Warm Ivory & Parchment Cards on Dark Maroon Background */}
         <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           {PHOTOGRAPHY_PACKAGES.map((pkg) => {
             const isFeatured = pkg.featured;
@@ -49,29 +49,25 @@ export function PhotographyPackagesSection() {
             return (
               <article
                 key={pkg.id}
-                className={`relative rounded-sm flex flex-col justify-between p-6 sm:p-8 transition-all ${
+                className={`relative rounded-sm flex flex-col justify-between p-6 sm:p-8 transition-all text-[#29201D] ${
                   isFeatured
-                    ? "bg-gradient-to-b from-[#641A27] via-[#4D131F] to-[#340B13] border-2 border-[#E5C46A] shadow-[0_20px_60px_rgba(229,196,106,0.18)] lg:-translate-y-3"
-                    : "bg-[#380D16]/90 border border-[#D9BE82]/50 hover:border-[#D9BE82]"
+                    ? "bg-[#FFF7E9] border-2 border-[#E5C46A] shadow-[0_24px_60px_rgba(0,0,0,0.45)] lg:-translate-y-3"
+                    : "bg-[#FAF0DC] border-2 border-[#D9BE82] shadow-xl"
                 }`}
               >
                 <OrnamentalFrameCorners
-                  colorClass={
-                    isFeatured ? "text-[#E5C46A]" : "text-[#D9BE82]/70"
-                  }
+                  colorClass="text-[#641A27]/75"
                   sizeClass="w-8 h-8"
                 />
 
-                {/* Top Featured Ribbon */}
-                {isFeatured && (
-                  <div className="mb-4 -mt-2 inline-flex items-center self-start gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#E5C46A] to-[#D9BE82] text-[#29201D] text-xs font-bold uppercase tracking-wider shadow">
-                    <Sparkles aria-hidden="true" className="w-3.5 h-3.5" />
+                {/* Top Badge */}
+                {isFeatured ? (
+                  <div className="mb-4 -mt-2 inline-flex items-center self-start gap-1.5 px-3.5 py-1 rounded-full bg-gradient-to-r from-[#E5C46A] to-[#D9BE82] text-[#29201D] border border-[#B89555] text-xs font-bold uppercase tracking-wider shadow-sm">
+                    <Sparkles aria-hidden="true" className="w-3.5 h-3.5 text-[#641A27]" />
                     <span>{t(pkg.badge)}</span>
                   </div>
-                )}
-
-                {!isFeatured && (
-                  <div className="mb-4 inline-flex items-center self-start gap-1.5 px-3 py-1 rounded-sm bg-[#2B0910] border border-[#D9BE82]/40 text-[#E5C46A] text-xs font-semibold uppercase tracking-wider">
+                ) : (
+                  <div className="mb-4 inline-flex items-center self-start gap-1.5 px-3 py-1 rounded-sm bg-[#F2E3C9] border border-[#B89555] text-[#641A27] text-xs font-bold uppercase tracking-wider">
                     <span>{t(pkg.badge)}</span>
                   </div>
                 )}
@@ -80,14 +76,14 @@ export function PhotographyPackagesSection() {
                   <div>
                     <p
                       lang="hi"
-                      className="font-hindi text-xs sm:text-sm text-[#E5C46A] font-medium"
+                      className="font-hindi text-xs sm:text-sm text-[#B52632] font-semibold"
                     >
                       ॥ {pkg.hindiSubtitle} ॥
                     </p>
-                    <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#FFF7E9] mt-1">
+                    <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#641A27] mt-1">
                       {t(pkg.name)}
                     </h3>
-                    <p className="mt-2.5 text-sm sm:text-base text-[#F2E3C9]/90 leading-relaxed">
+                    <p className="mt-2.5 text-sm sm:text-base text-[#29201D]/85 leading-relaxed">
                       {t(pkg.positioning)}
                     </p>
                   </div>
@@ -95,12 +91,12 @@ export function PhotographyPackagesSection() {
                   {/* Ornamental Hairline */}
                   <div
                     aria-hidden="true"
-                    className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#D9BE82]/50 to-transparent my-4"
+                    className="h-[1px] w-full bg-gradient-to-r from-transparent via-[#B89555]/60 to-transparent my-4"
                   />
 
                   {/* Inclusions List */}
                   <div>
-                    <p className="text-xs uppercase tracking-[0.18em] text-[#E5C46A] font-semibold mb-3">
+                    <p className="text-xs uppercase tracking-[0.18em] text-[#641A27] font-bold mb-3">
                       {locale === "hi"
                         ? "प्रस्तावित सेवाएं (पैकेज में शामिल):"
                         : "Proposed Package Inclusions:"}
@@ -109,12 +105,12 @@ export function PhotographyPackagesSection() {
                       {pkg.inclusions[locale].map((inclusion) => (
                         <li
                           key={inclusion}
-                          className="flex items-start gap-2.5 text-sm text-[#FFF7E9]/95"
+                          className="flex items-start gap-2.5 text-sm text-[#29201D]/90"
                         >
-                          <span className="w-5 h-5 rounded-full bg-[#E5C46A]/20 border border-[#E5C46A]/60 flex items-center justify-center shrink-0 mt-0.5">
+                          <span className="w-5 h-5 rounded-full bg-[#F2E3C9] border border-[#B89555] flex items-center justify-center shrink-0 mt-0.5">
                             <Check
                               aria-hidden="true"
-                              className="w-3 h-3 text-[#E5C46A]"
+                              className="w-3 h-3 text-[#641A27]"
                             />
                           </span>
                           <span>{inclusion}</span>
@@ -125,11 +121,11 @@ export function PhotographyPackagesSection() {
                 </div>
 
                 {/* Consultation Scope Note & Request a Quote CTA */}
-                <div className="mt-8 pt-5 border-t border-[#D9BE82]/30 space-y-4">
-                  <p className="flex items-start gap-2 text-xs text-[#F2E3C9]/80 leading-relaxed">
+                <div className="mt-8 pt-5 border-t border-[#B89555]/40 space-y-4">
+                  <p className="flex items-start gap-2 text-xs text-[#29201D]/80 leading-relaxed">
                     <Info
                       aria-hidden="true"
-                      className="w-4 h-4 text-[#E5C46A] shrink-0 mt-0.5"
+                      className="w-4 h-4 text-[#B52632] shrink-0 mt-0.5"
                     />
                     <span>{t(pkg.consultationNote)}</span>
                   </p>
@@ -137,7 +133,7 @@ export function PhotographyPackagesSection() {
                   <WhatsAppButton
                     message={pkg.whatsappMessage}
                     label={`${t(pkg.ctaLabel)} — ${pkg.name.en}`}
-                    variant={isFeatured ? "gold" : "vermilion"}
+                    variant={isFeatured ? "maroon" : "gold"}
                     size="md"
                     className="w-full"
                   />
@@ -147,9 +143,9 @@ export function PhotographyPackagesSection() {
           })}
         </div>
 
-        {/* Bottom Transparency Notice */}
-        <div className="mt-10 rounded-sm bg-[#43101B]/80 border border-[#D9BE82]/40 p-4 sm:p-5 text-center max-w-3xl mx-auto">
-          <p className="text-xs sm:text-sm text-[#F2E3C9]/90 leading-relaxed">
+        {/* Bottom Transparency Notice: Light Parchment Box on Dark Maroon Background */}
+        <div className="mt-10 rounded-sm bg-[#FFF7E9] text-[#29201D] border-2 border-[#D9BE82] p-4 sm:p-5 text-center max-w-3xl mx-auto shadow-md">
+          <p className="text-xs sm:text-sm text-[#29201D]/90 leading-relaxed font-medium">
             {locale === "hi"
               ? "नोट: प्रत्येक विवाह और कार्यक्रम का समय, स्थान और आवश्यकताएं भिन्न होती हैं। अंतिम डिलीवरेबल्स, कार्यक्रम की समय-सारणी और शुल्क (कोटेशन) व्हाट्सएप या फ़ोन पर आपकी आवश्यकता समझने के बाद तय किए जाते हैं।"
               : "Scope & Booking Note: Because every family's celebration schedule and coverage requirements are unique, final deliverables, timelines, and pricing are confirmed transparently during your consultation."}
@@ -159,4 +155,3 @@ export function PhotographyPackagesSection() {
     </section>
   );
 }
-

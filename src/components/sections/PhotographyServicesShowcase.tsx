@@ -55,19 +55,19 @@ export function PhotographyServicesShowcase({
           />
         </div>
 
-        {/* Asymmetrical Editorial Grid for 4 Primary Wedding Offerings */}
+        {/* Asymmetrical Editorial Grid: Light Warm Ivory Cards on Dark Maroon Section */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Oversized Lead Feature Card: Wedding Photography */}
+          {/* Oversized Lead Feature Card: Warm Ivory Surface (#FFF7E9) */}
           {primaryServices[0] && (
             <article
               id={primaryServices[0].slug}
-              className="lg:col-span-7 relative rounded-sm bg-[#2B0910] border-2 border-[#D9BE82]/70 overflow-hidden flex flex-col justify-between shadow-2xl"
+              className="lg:col-span-7 relative rounded-sm bg-[#FFF7E9] text-[#29201D] border-2 border-[#D9BE82] overflow-hidden flex flex-col justify-between shadow-2xl"
             >
               <OrnamentalFrameCorners
-                colorClass="text-[#E5C46A]"
+                colorClass="text-[#B89555]"
                 sizeClass="w-8 h-8"
               />
-              <div className="relative aspect-[16/10] overflow-hidden bg-[#1D060A]">
+              <div className="relative aspect-[16/10] overflow-hidden bg-[#F2E3C9] border-b border-[#B89555]/40">
                 <img
                   src={primaryServices[0].image}
                   alt={t(primaryServices[0].imageAlt)}
@@ -76,17 +76,13 @@ export function PhotographyServicesShowcase({
                   height={500}
                   className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                 />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-[#2B0910] via-[#2B0910]/30 to-transparent"
-                />
-                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-[#641A27]/95 border border-[#E5C46A]/60 text-xs font-semibold text-[#E5C46A]">
-                  <Sparkles aria-hidden="true" className="w-3.5 h-3.5" />
+                <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-sm bg-[#FFF7E9]/95 border border-[#B89555] text-xs font-bold text-[#641A27] shadow-sm">
+                  <Sparkles aria-hidden="true" className="w-3.5 h-3.5 text-[#B52632]" />
                   <span>
                     {locale === "hi" ? "प्रमुख विशेषज्ञता" : "Signature Specialization"}
                   </span>
                 </div>
-                <span className="absolute top-4 right-4 px-2.5 py-0.5 rounded-sm bg-[#2B0910]/85 border border-[#D9BE82]/40 text-[10px] text-[#F2E3C9]/80">
+                <span className="absolute top-4 right-4 px-2.5 py-0.5 rounded-sm bg-[#FFF7E9]/90 border border-[#B89555]/60 text-[10px] font-medium text-[#29201D]">
                   {locale === "hi" ? "प्रतीकात्मक झलक" : "Illustrative Preview"}
                 </span>
               </div>
@@ -96,29 +92,29 @@ export function PhotographyServicesShowcase({
                   {primaryServices[0].hindiAccent && (
                     <p
                       lang="hi"
-                      className="font-hindi text-xs sm:text-sm text-[#E5C46A] font-medium mb-1"
+                      className="font-hindi text-xs sm:text-sm text-[#B52632] font-semibold mb-1"
                     >
                       ॥ {primaryServices[0].hindiAccent} ॥
                     </p>
                   )}
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#FFF7E9]">
+                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#641A27]">
                     {t(primaryServices[0].title)}
                   </h3>
-                  <p className="mt-2.5 text-sm sm:text-base text-[#F2E3C9]/90 leading-relaxed">
+                  <p className="mt-2.5 text-sm sm:text-base text-[#29201D]/85 leading-relaxed">
                     {showAllDetails
                       ? t(primaryServices[0].detailedDescription)
                       : t(primaryServices[0].shortDescription)}
                   </p>
 
-                  <ul className="mt-4 space-y-2 border-t border-[#D9BE82]/25 pt-4">
+                  <ul className="mt-4 space-y-2 border-t border-[#B89555]/35 pt-4">
                     {primaryServices[0].highlights[locale].map((point) => (
                       <li
                         key={point}
-                        className="flex items-start gap-2 text-xs sm:text-sm text-[#F2E3C9]"
+                        className="flex items-start gap-2 text-xs sm:text-sm text-[#29201D]/90"
                       >
                         <Check
                           aria-hidden="true"
-                          className="w-4 h-4 text-[#E5C46A] shrink-0 mt-0.5"
+                          className="w-4 h-4 text-[#B52632] shrink-0 mt-0.5"
                         />
                         <span>{point}</span>
                       </li>
@@ -134,13 +130,13 @@ export function PhotographyServicesShowcase({
                         ? "वेडिंग फोटोग्राफी कोटेशन"
                         : "Enquire for Wedding Photography"
                     }
-                    variant="gold"
+                    variant="maroon"
                     size="sm"
                   />
                   {!showAllDetails && (
                     <Link
                       href="/photography-videography"
-                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#E5C46A] hover:text-[#FFF7E9]"
+                      className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#641A27] hover:text-[#B52632]"
                     >
                       <span>
                         {locale === "hi" ? "विवरण देखें" : "Full Service Details"}
@@ -153,15 +149,15 @@ export function PhotographyServicesShowcase({
             </article>
           )}
 
-          {/* Right Stacked Column: Wedding Videography, Cinematic Films, Pre-Wedding */}
+          {/* Right Stacked Column: Light Warm Ivory Cards (#FAF0DC) on Dark Maroon Background */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-6">
             {primaryServices.slice(1).map((service) => (
               <article
                 key={service.id}
                 id={service.slug}
-                className="group relative rounded-sm bg-[#2B0910]/90 border border-[#D9BE82]/50 hover:border-[#E5C46A] p-5 sm:p-6 transition-all shadow-lg flex flex-col sm:flex-row gap-5 items-start"
+                className="group relative rounded-sm bg-[#FAF0DC] text-[#29201D] border-2 border-[#D9BE82] hover:border-[#E5C46A] p-5 sm:p-6 transition-all shadow-lg flex flex-col sm:flex-row gap-5 items-start"
               >
-                <div className="w-full sm:w-36 aspect-[16/10] sm:aspect-square rounded-sm overflow-hidden border border-[#D9BE82]/40 shrink-0 relative bg-[#1D060A]">
+                <div className="w-full sm:w-36 aspect-[16/10] sm:aspect-square rounded-sm overflow-hidden border border-[#B89555] shrink-0 relative bg-[#F2E3C9]">
                   <img
                     src={service.image}
                     alt={t(service.imageAlt)}
@@ -176,15 +172,15 @@ export function PhotographyServicesShowcase({
                   {service.hindiAccent && (
                     <span
                       lang="hi"
-                      className="font-hindi text-xs text-[#E5C46A] font-medium block"
+                      className="font-hindi text-xs text-[#B52632] font-semibold block"
                     >
                       {service.hindiAccent}
                     </span>
                   )}
-                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#FFF7E9]">
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#641A27]">
                     {t(service.title)}
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#F2E3C9]/85 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-[#29201D]/85 leading-relaxed">
                     {showAllDetails
                       ? t(service.detailedDescription)
                       : t(service.shortDescription)}
@@ -195,11 +191,11 @@ export function PhotographyServicesShowcase({
                       {service.highlights[locale].map((pt) => (
                         <li
                           key={pt}
-                          className="flex items-start gap-1.5 text-xs text-[#F2E3C9]/90"
+                          className="flex items-start gap-1.5 text-xs text-[#29201D]/90"
                         >
                           <Check
                             aria-hidden="true"
-                            className="w-3.5 h-3.5 text-[#E5C46A] shrink-0 mt-0.5"
+                            className="w-3.5 h-3.5 text-[#B52632] shrink-0 mt-0.5"
                           />
                           <span>{pt}</span>
                         </li>
@@ -212,7 +208,7 @@ export function PhotographyServicesShowcase({
                       href={getWhatsAppUrl(service.whatsappMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E5C46A] hover:text-[#FFF7E9] underline underline-offset-4"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#641A27] hover:text-[#B52632] underline underline-offset-4"
                     >
                       <MessageCircle aria-hidden="true" className="w-3.5 h-3.5" />
                       <span>
@@ -228,7 +224,7 @@ export function PhotographyServicesShowcase({
           </div>
         </div>
 
-        {/* Supporting 5 Categories: Engagement, Haldi/Mehendi, Family Functions, Video Editing, Custom Needs */}
+        {/* Supporting 5 Categories: All Light Warm Ivory Cards on the Dark Maroon Section */}
         <div className="mt-12 pt-10 border-t border-[#D9BE82]/30">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
             <div>
@@ -248,7 +244,7 @@ export function PhotographyServicesShowcase({
               label={
                 locale === "hi" ? "अन्य कार्यक्रम हेतु पूछताछ" : "Enquire About Your Event"
               }
-              variant="outline-gold"
+              variant="gold"
               size="sm"
             />
           </div>
@@ -258,66 +254,46 @@ export function PhotographyServicesShowcase({
               <article
                 key={service.id}
                 id={service.slug}
-                className={`rounded-sm p-5 sm:p-6 border transition-all flex flex-col justify-between ${
+                className={`rounded-sm p-5 sm:p-6 border-2 border-[#D9BE82] bg-[#FFF7E9] text-[#29201D] shadow-md transition-all flex flex-col justify-between ${
                   idx === secondaryServices.length - 1
-                    ? "md:col-span-2 lg:col-span-1 bg-gradient-to-br from-[#641A27] to-[#43101B] border-[#E5C46A]/60"
-                    : "bg-[#FFF7E9] text-[#29201D] border-[#B89555]"
+                    ? "md:col-span-2 lg:col-span-1 bg-[#FAF0DC]"
+                    : ""
                 }`}
               >
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <span
                       lang="hi"
-                      className={`font-hindi text-xs font-semibold ${
-                        idx === secondaryServices.length - 1
-                          ? "text-[#E5C46A]"
-                          : "text-[#B52632]"
-                      }`}
+                      className="font-hindi text-xs font-semibold text-[#B52632]"
                     >
                       {service.hindiAccent}
                     </span>
-                    <span
-                      aria-hidden="true"
-                      className={
-                        idx === secondaryServices.length - 1
-                          ? "text-[#E5C46A]"
-                          : "text-[#B89555]"
-                      }
-                    >
+                    <span aria-hidden="true" className="text-[#B89555]">
                       ✦
                     </span>
                   </div>
 
-                  <h4
-                    className={`font-serif text-xl font-bold ${
-                      idx === secondaryServices.length - 1
-                        ? "text-[#FFF7E9]"
-                        : "text-[#641A27]"
-                    }`}
-                  >
+                  <h4 className="font-serif text-xl font-bold text-[#641A27]">
                     {t(service.title)}
                   </h4>
 
-                  <p
-                    className={`mt-2 text-xs sm:text-sm leading-relaxed ${
-                      idx === secondaryServices.length - 1
-                        ? "text-[#F2E3C9]/90"
-                        : "text-[#29201D]/85"
-                    }`}
-                  >
+                  <p className="mt-2 text-xs sm:text-sm text-[#29201D]/85 leading-relaxed">
                     {showAllDetails
                       ? t(service.detailedDescription)
                       : t(service.shortDescription)}
                   </p>
 
                   {showAllDetails && (
-                    <ul className="mt-3 space-y-1.5 pt-3 border-t border-current/15">
+                    <ul className="mt-3 space-y-1.5 pt-3 border-t border-[#B89555]/30">
                       {service.highlights[locale].map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-1.5 text-xs opacity-90"
+                          className="flex items-start gap-1.5 text-xs text-[#29201D]/90"
                         >
-                          <Check aria-hidden="true" className="w-3.5 h-3.5 shrink-0 mt-0.5" />
+                          <Check
+                            aria-hidden="true"
+                            className="w-3.5 h-3.5 text-[#B52632] shrink-0 mt-0.5"
+                          />
                           <span>{item}</span>
                         </li>
                       ))}
@@ -325,16 +301,12 @@ export function PhotographyServicesShowcase({
                   )}
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-current/15 flex items-center justify-between">
+                <div className="mt-5 pt-3 border-t border-[#B89555]/30 flex items-center justify-between">
                   <a
                     href={getWhatsAppUrl(service.whatsappMessage)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-1.5 text-xs font-bold tracking-wide ${
-                      idx === secondaryServices.length - 1
-                        ? "text-[#E5C46A] hover:text-[#FFF7E9]"
-                        : "text-[#641A27] hover:text-[#B52632]"
-                    }`}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wide text-[#641A27] hover:text-[#B52632]"
                   >
                     <MessageCircle aria-hidden="true" className="w-3.5 h-3.5" />
                     <span>
@@ -352,4 +324,3 @@ export function PhotographyServicesShowcase({
     </section>
   );
 }
-

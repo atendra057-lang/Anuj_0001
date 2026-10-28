@@ -96,10 +96,10 @@ export function ContactPageContent() {
         </div>
       </PageBanner>
 
-      {/* 1-Click Service-Specific WhatsApp Quick Launchers */}
+      {/* 1-Click Service-Specific WhatsApp Quick Launchers: Light Ivory Pills on Dark Maroon Strip */}
       <section className="py-10 bg-[#43101B] text-[#FFF7E9] border-b border-[#D9BE82]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#E5C46A] font-semibold mb-3">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#E5C46A] font-semibold mb-3.5">
             {locale === "hi"
               ? "१-क्लिक व्हाट्सएप पूछताछ (अपनी सेवा चुनें):"
               : "1-Click Service-Specific WhatsApp Enquiries:"}
@@ -111,11 +111,11 @@ export function ContactPageContent() {
                 href={getWhatsAppUrl(topic.message)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm text-xs sm:text-sm font-medium bg-[#641A27] border border-[#D9BE82]/50 text-[#FFF7E9] hover:border-[#E5C46A] hover:bg-[#B52632] transition-colors"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm text-xs sm:text-sm font-semibold bg-[#FFF7E9] border border-[#D9BE82] text-[#29201D] hover:bg-[#E5C46A] transition-colors shadow-sm"
               >
                 <MessageCircle
                   aria-hidden="true"
-                  className="w-3.5 h-3.5 text-[#E5C46A] shrink-0"
+                  className="w-3.5 h-3.5 text-[#641A27] shrink-0"
                 />
                 <span>{topic.label[locale]}</span>
               </a>
@@ -132,4 +132,3 @@ export function ContactPageContent() {
     </>
   );
 }
-

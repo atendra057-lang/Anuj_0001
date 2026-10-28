@@ -110,14 +110,14 @@ export function WeddingInvitationShowcase() {
 
         {/* Main Showcase: Left Visual + Interactive 5-Style Invitation Explorer */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* Left Column: Studio Wedding Card Flat-Lay & Ceremony Types */}
+          {/* Left Column: Clean Light Parchment Framed Card Flat-Lay */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="relative p-3 rounded-sm bg-[#641A27] border-2 border-[#D9BE82] shadow-xl">
+            <div className="relative p-4 rounded-sm bg-[#FAF0DC] text-[#29201D] border-2 border-[#B89555] shadow-lg">
               <OrnamentalFrameCorners
-                colorClass="text-[#E5C46A]"
+                colorClass="text-[#641A27]"
                 sizeClass="w-7 h-7"
               />
-              <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-[#D9BE82]/60">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm border border-[#B89555]">
                 <img
                   src="/images/invitations/royal-wedding-cards.png"
                   alt={
@@ -130,25 +130,25 @@ export function WeddingInvitationShowcase() {
                   height={480}
                   className="w-full h-full object-cover"
                 />
-                <span className="absolute bottom-2.5 right-2.5 px-2.5 py-0.5 rounded-sm bg-[#2B0910]/90 border border-[#D9BE82]/50 text-[10px] text-[#E5C46A]">
+                <span className="absolute bottom-2.5 right-2.5 px-2.5 py-0.5 rounded-sm bg-[#FFF7E9]/95 border border-[#B89555] text-[10px] font-medium text-[#29201D]">
                   {locale === "hi"
                     ? "प्रतीकात्मक डिज़ाइन झलक"
                     : "Illustrative Design Preview"}
                 </span>
               </div>
 
-              <div className="p-4 text-[#FFF7E9]">
-                <p className="text-xs uppercase tracking-[0.2em] text-[#E5C46A] font-semibold">
+              <div className="pt-4 px-1">
+                <p className="text-xs uppercase tracking-[0.2em] text-[#B52632] font-bold">
                   {locale === "hi"
                     ? "मांगलिक निमंत्रण पत्र"
                     : "Ceremonial Invitation Suite"}
                 </p>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold mt-1">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#641A27] mt-1">
                   {locale === "hi"
                     ? "विवाह, तिलक, सगाई एवं अन्य शुभ संस्कारों हेतु कार्ड"
                     : "Invitations for Every Auspicious Occasion"}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm text-[#F2E3C9]/90 leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-[#29201D]/85 leading-relaxed">
                   {locale === "hi"
                     ? "हम शादी कार्ड, सगाई/रिंग सेरेमनी, तिलक, रिसेप्शन, गृह प्रवेश, मुंडन और जन्मदिन के लिए सुंदर निमंत्रण पत्र प्रिंट करते हैं।"
                     : "From grand multi-insert marriage cards to single-leaf invitations for Engagements, Tilak, Reception, Griha Pravesh, and Mundan ceremonies."}
@@ -269,85 +269,69 @@ export function WeddingInvitationShowcase() {
               })}
             </div>
 
-            {/* Live Ornate Invitation Card Mockup Canvas */}
+            {/* Outer Card Envelope Border + Light Warm-Ivory Inner Printed Sheet */}
             <div
               role="tabpanel"
               id={`invitation-panel-${activeStyle.id}`}
               aria-labelledby={`invitation-tab-${activeStyle.id}`}
               style={{
                 backgroundColor: activeStyle.colorScheme.bg,
-                color: activeStyle.colorScheme.text,
                 borderColor: activeStyle.colorScheme.border,
               }}
-              className="relative rounded-sm border-2 p-6 sm:p-10 shadow-2xl transition-colors duration-300"
+              className="relative rounded-sm border-2 p-3 sm:p-5 shadow-xl transition-colors duration-300"
             >
-              <OrnamentalFrameCorners
-                colorClass="text-current opacity-80"
-                sizeClass="w-9 h-9 sm:w-11 sm:h-11"
-              />
+              {/* Inner Light Ivory Printed Card Insert for High Readability */}
+              <div className="relative rounded-sm bg-[#FFF7E9] text-[#29201D] border-2 border-[#B89555] p-6 sm:p-9 text-center space-y-4 shadow-inner">
+                <OrnamentalFrameCorners
+                  colorClass="text-[#641A27]"
+                  sizeClass="w-8 h-8 sm:w-10 sm:h-10"
+                />
 
-              {/* Inner Double Invitation Border */}
-              <div
-                style={{ borderColor: activeStyle.colorScheme.border }}
-                className="border border-opacity-50 p-5 sm:p-8 text-center space-y-4"
-              >
                 <p
                   lang="hi"
-                  style={{ color: activeStyle.colorScheme.accent }}
-                  className="font-hindi text-xs sm:text-sm font-semibold tracking-widest"
+                  className="font-hindi text-xs sm:text-sm font-semibold tracking-widest text-[#B52632]"
                 >
                   ॥ श्री गणेशाय नमः • शुभ विवाह निमंत्रण ॥
                 </p>
 
-                <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full border border-current/30 text-[11px] uppercase tracking-[0.2em]">
-                  <Sparkles aria-hidden="true" className="w-3 h-3" />
+                <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-[#FAF0DC] border border-[#B89555] text-[11px] uppercase tracking-[0.2em] text-[#641A27] font-semibold">
+                  <Sparkles aria-hidden="true" className="w-3 h-3 text-[#B52632]" />
                   <span>
                     {locale === "hi"
-                      ? `शैली ${activeStyle.styleNumber} — प्रतीकात्मक कार्ड डिज़ाइन`
-                      : `Direction ${activeStyle.styleNumber} — Illustrative Card Concept`}
+                      ? `शैली ${activeStyle.styleNumber} — ${t(activeStyle.colorScheme.label)}`
+                      : `Direction ${activeStyle.styleNumber} — ${t(activeStyle.colorScheme.label)}`}
                   </span>
                 </div>
 
-                <h4 className="font-serif text-2xl sm:text-4xl font-bold leading-tight">
+                <h4 className="font-serif text-2xl sm:text-4xl font-bold leading-tight text-[#641A27]">
                   {t(activeStyle.title)}
                 </h4>
 
-                <p
-                  style={{ color: activeStyle.colorScheme.accent }}
-                  className="text-xs sm:text-sm font-semibold uppercase tracking-widest"
-                >
+                <p className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#B52632]">
                   {t(activeStyle.subtitle)}
                 </p>
 
-                <DecorativeDivider
-                  variant="lotus"
-                  tone={
-                    activeStyle.colorScheme.bg === "#FFF7E9" ||
-                    activeStyle.colorScheme.bg === "#F2E3C9"
-                      ? "maroon"
-                      : "gold"
-                  }
-                />
+                <DecorativeDivider variant="lotus" tone="maroon" />
 
-                <p className="text-sm sm:text-base max-w-xl mx-auto leading-relaxed opacity-95">
+                <p className="text-sm sm:text-base max-w-xl mx-auto leading-relaxed text-[#29201D]/90">
                   {t(activeStyle.description)}
                 </p>
 
-                <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs opacity-90">
-                  <span className="px-3 py-1.5 rounded-sm border border-current/30 font-medium">
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-[#29201D]">
+                  <span className="px-3.5 py-1.5 rounded-sm bg-[#FAF0DC] border border-[#B89555] font-medium">
                     <strong>{locale === "hi" ? "उपयुक्त:" : "Ideal For:"}</strong>{" "}
                     {t(activeStyle.suitedFor)}
                   </span>
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-3">
                   <a
                     href={getWhatsAppUrl(activeStyle.whatsappMessage)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-sm font-semibold text-xs sm:text-sm bg-gradient-to-r from-[#E5C46A] to-[#D9BE82] text-[#29201D] shadow hover:brightness-105"
+                    className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-sm font-semibold text-xs sm:text-sm bg-[#641A27] text-[#FFF7E9] border border-[#D9BE82] shadow hover:bg-[#43101B]"
                   >
-                    <MessageCircle aria-hidden="true" className="w-4 h-4" />
+                    <MessageCircle aria-hidden="true" className="w-4 h-4 text-[#E5C46A]" />
                     <span>
                       {locale === "hi"
                         ? "इस कार्ड शैली के लिए पूछताछ करें"
@@ -426,7 +410,7 @@ export function WeddingInvitationShowcase() {
                   ? "प्रिंटिंग कोटेशन प्राप्त करें"
                   : "Request a Printing Quote"
               }
-              variant="vermilion"
+              variant="gold"
               size="lg"
             />
           </div>
@@ -435,4 +419,3 @@ export function WeddingInvitationShowcase() {
     </section>
   );
 }
-

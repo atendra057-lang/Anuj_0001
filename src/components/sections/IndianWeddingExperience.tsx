@@ -39,121 +39,79 @@ export function IndianWeddingExperience() {
           />
         </div>
 
-        {/* 6-Chapter Editorial Sequence Grid */}
+        {/* 6-Chapter Editorial Sequence Grid: Clean Warm Ivory Cards */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {WEDDING_CHAPTERS.map((chapter, idx) => {
-            const isDarkPanel = idx % 2 === 0;
-            return (
-              <article
-                key={chapter.id}
-                className={`relative rounded-sm border-2 p-6 sm:p-7 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 shadow-lg ${
-                  isDarkPanel
-                    ? "bg-gradient-to-b from-[#641A27] to-[#43101B] text-[#FFF7E9] border-[#D9BE82]"
-                    : "bg-[#FFF7E9] text-[#29201D] border-[#B89555]"
-                }`}
-              >
-                <OrnamentalFrameCorners
-                  colorClass={
-                    isDarkPanel ? "text-[#E5C46A]/80" : "text-[#641A27]/75"
-                  }
-                  sizeClass="w-7 h-7"
-                />
+          {WEDDING_CHAPTERS.map((chapter) => (
+            <article
+              key={chapter.id}
+              className="relative rounded-sm border-2 border-[#B89555] bg-[#FFF7E9] text-[#29201D] p-6 sm:p-7 flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1 shadow-md"
+            >
+              <OrnamentalFrameCorners
+                colorClass="text-[#B89555]"
+                sizeClass="w-7 h-7"
+              />
 
-                <div>
-                  {/* Top Chapter Number & Hindi Badge */}
-                  <div className="flex items-center justify-between gap-3 mb-4">
-                    <span
-                      className={`font-serif text-4xl sm:text-5xl font-bold leading-none ${
-                        isDarkPanel ? "text-[#E5C46A]" : "text-[#B52632]"
-                      }`}
-                    >
-                      {chapter.number}
-                    </span>
-                    <span
-                      lang="hi"
-                      className={`font-hindi text-xs font-semibold px-3 py-1 rounded-full border ${
-                        isDarkPanel
-                          ? "bg-[#2B0910]/80 border-[#D9BE82]/50 text-[#E5C46A]"
-                          : "bg-[#F2E3C9] border-[#B89555] text-[#641A27]"
-                      }`}
-                    >
-                      {chapter.hindiLabel}
-                    </span>
-                  </div>
-
-                  {/* Framed Chapter Photograph */}
-                  <div
-                    className={`relative aspect-[16/10] rounded-sm overflow-hidden mb-5 border ${
-                      isDarkPanel ? "border-[#D9BE82]/60" : "border-[#B89555]"
-                    }`}
+              <div>
+                {/* Top Chapter Number & Hindi Badge */}
+                <div className="flex items-center justify-between gap-3 mb-4">
+                  <span className="font-serif text-4xl sm:text-5xl font-bold leading-none text-[#641A27]">
+                    {chapter.number}
+                  </span>
+                  <span
+                    lang="hi"
+                    className="font-hindi text-xs font-semibold px-3 py-1 rounded-full bg-[#FAF0DC] border border-[#B89555] text-[#641A27]"
                   >
-                    <img
-                      src={chapter.image}
-                      alt={t(chapter.title)}
-                      loading="lazy"
-                      width={500}
-                      height={312}
-                      className="w-full h-full object-cover"
-                    />
-                    <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-sm bg-[#21070C]/80 text-[10px] text-[#FFF7E9]/85">
-                      {locale === "hi" ? "प्रतीकात्मक" : "Illustrative"}
-                    </span>
-                  </div>
-
-                  <h3
-                    className={`font-serif text-2xl font-bold ${
-                      isDarkPanel ? "text-[#FFF7E9]" : "text-[#641A27]"
-                    }`}
-                  >
-                    {t(chapter.title)}
-                  </h3>
-
-                  <p
-                    className={`text-xs font-semibold uppercase tracking-wider mt-1 ${
-                      isDarkPanel ? "text-[#E5C46A]" : "text-[#B52632]"
-                    }`}
-                  >
-                    {t(chapter.subtitle)}
-                  </p>
-
-                  <p
-                    className={`mt-3 text-sm leading-relaxed ${
-                      isDarkPanel ? "text-[#F2E3C9]/90" : "text-[#29201D]/85"
-                    }`}
-                  >
-                    {t(chapter.description)}
-                  </p>
+                    {chapter.hindiLabel}
+                  </span>
                 </div>
 
-                <div
-                  className={`mt-6 pt-4 border-t flex items-center justify-between ${
-                    isDarkPanel ? "border-[#D9BE82]/25" : "border-[#B89555]/35"
-                  }`}
+                {/* Framed Chapter Photograph */}
+                <div className="relative aspect-[16/10] rounded-sm overflow-hidden mb-5 border border-[#B89555]">
+                  <img
+                    src={chapter.image}
+                    alt={t(chapter.title)}
+                    loading="lazy"
+                    width={500}
+                    height={312}
+                    className="w-full h-full object-cover"
+                  />
+                  <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-sm bg-[#FFF7E9]/90 border border-[#B89555]/50 text-[10px] text-[#29201D] font-medium">
+                    {locale === "hi" ? "प्रतीकात्मक" : "Illustrative"}
+                  </span>
+                </div>
+
+                <h3 className="font-serif text-2xl font-bold text-[#641A27]">
+                  {t(chapter.title)}
+                </h3>
+
+                <p className="text-xs font-semibold uppercase tracking-wider mt-1 text-[#B52632]">
+                  {t(chapter.subtitle)}
+                </p>
+
+                <p className="mt-3 text-sm leading-relaxed text-[#29201D]/85">
+                  {t(chapter.description)}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-[#B89555]/35 flex items-center justify-between">
+                <a
+                  href={getWhatsAppUrl(chapter.whatsappMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold tracking-wide text-[#641A27] hover:text-[#B52632]"
                 >
-                  <a
-                    href={getWhatsAppUrl(chapter.whatsappMessage)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-1.5 text-xs font-bold tracking-wide ${
-                      isDarkPanel
-                        ? "text-[#E5C46A] hover:text-[#FFF7E9]"
-                        : "text-[#641A27] hover:text-[#B52632]"
-                    }`}
-                  >
-                    <MessageCircle aria-hidden="true" className="w-3.5 h-3.5" />
-                    <span>
-                      {locale === "hi"
-                        ? "इस समारोह के लिए पूछताछ करें →"
-                        : "Plan Coverage for This Event →"}
-                    </span>
-                  </a>
-                </div>
-              </article>
-            );
-          })}
+                  <MessageCircle aria-hidden="true" className="w-3.5 h-3.5" />
+                  <span>
+                    {locale === "hi"
+                      ? "इस समारोह के लिए पूछताछ करें →"
+                      : "Plan Coverage for This Event →"}
+                  </span>
+                </a>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
   );
 }
-

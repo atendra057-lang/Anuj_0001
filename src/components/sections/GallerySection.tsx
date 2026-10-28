@@ -210,10 +210,9 @@ export function GallerySection() {
           })}
         </div>
 
-        {/* Editorial Bento / Masonry-Style Grid */}
+        {/* Editorial Bento Grid: Light Warm Ivory Cards */}
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6">
           {filteredItems.map((item, idx) => {
-            // Vary column span when viewing "all" for an editorial rhythm
             const colSpanClass =
               activeCategory === "all"
                 ? idx === 0 || idx === 3
@@ -226,9 +225,9 @@ export function GallerySection() {
             return (
               <article
                 key={item.id}
-                className={`${colSpanClass} group relative rounded-sm bg-[#43101B] text-[#FFF7E9] border-2 border-[#B89555] overflow-hidden shadow-lg flex flex-col justify-between`}
+                className={`${colSpanClass} group relative rounded-sm bg-[#FFF7E9] text-[#29201D] border-2 border-[#B89555] overflow-hidden shadow-md flex flex-col justify-between`}
               >
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#2B0910]">
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#F2E3C9] border-b border-[#B89555]/40">
                   <img
                     src={item.src}
                     alt={t(item.alt)}
@@ -237,18 +236,14 @@ export function GallerySection() {
                     height={480}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div
-                    aria-hidden="true"
-                    className="absolute inset-0 bg-gradient-to-t from-[#21070C] via-transparent to-transparent opacity-80"
-                  />
 
-                  {/* Category Badge & Illustrative Tag */}
+                  {/* Light Ivory Category Badge & Illustrative Tag */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2">
-                    <span className="px-2.5 py-1 rounded-sm bg-[#641A27]/95 border border-[#D9BE82]/50 text-[11px] font-semibold text-[#E5C46A]">
+                    <span className="px-2.5 py-1 rounded-sm bg-[#FFF7E9]/95 border border-[#B89555] text-[11px] font-bold text-[#641A27] shadow-sm">
                       {t(item.categoryLabel)}
                     </span>
                     {item.isPlaceholder && (
-                      <span className="px-2 py-0.5 rounded-sm bg-[#21070C]/85 border border-[#D9BE82]/35 text-[10px] text-[#F2E3C9]/85">
+                      <span className="px-2 py-0.5 rounded-sm bg-[#FFF7E9]/90 border border-[#B89555]/60 text-[10px] text-[#29201D] font-medium">
                         {locale === "hi"
                           ? "प्रतीकात्मक झलक"
                           : "Illustrative Preview"}
@@ -265,7 +260,7 @@ export function GallerySection() {
                         ? `${t(item.title)} को बड़े आकार में देखें`
                         : `Open ${t(item.title)} in full-screen lightbox`
                     }
-                    className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-[#21070C]/90 border border-[#E5C46A]/70 text-xs font-semibold text-[#E5C46A] hover:bg-[#E5C46A] hover:text-[#29201D] transition-colors cursor-pointer min-h-[38px]"
+                    className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm bg-[#FFF7E9]/95 border border-[#B89555] text-xs font-bold text-[#641A27] hover:bg-[#E5C46A] hover:text-[#29201D] shadow transition-colors cursor-pointer min-h-[38px]"
                   >
                     <Expand aria-hidden="true" className="w-3.5 h-3.5" />
                     <span>{locale === "hi" ? "बड़ा देखें" : "Inspect"}</span>
@@ -274,20 +269,20 @@ export function GallerySection() {
 
                 <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#FFF7E9]">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#641A27]">
                       {t(item.title)}
                     </h3>
-                    <p className="mt-1.5 text-xs text-[#F2E3C9]/85 leading-relaxed">
+                    <p className="mt-1.5 text-xs text-[#29201D]/85 leading-relaxed">
                       {t(item.caption)}
                     </p>
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[#D9BE82]/25 flex items-center justify-between">
+                  <div className="mt-4 pt-3 border-t border-[#B89555]/35 flex items-center justify-between">
                     <a
                       href={getWhatsAppUrl(item.whatsappMessage)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#E5C46A] hover:text-[#FFF7E9]"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-[#641A27] hover:text-[#B52632]"
                     >
                       <MessageCircle aria-hidden="true" className="w-3.5 h-3.5" />
                       <span>
@@ -303,30 +298,30 @@ export function GallerySection() {
           })}
         </div>
 
-        {/* Native Modal Dialog Lightbox */}
+        {/* Native Modal Dialog Lightbox: Clean Warm Ivory Surface */}
         <dialog
           ref={lightboxRef}
           id="gallery-lightbox-dialog"
           aria-labelledby="lightbox-dialog-title"
           {...({ closedby: "any" } as React.DialogHTMLAttributes<HTMLDialogElement>)}
-          className="m-auto w-[min(64rem,94vw)] max-h-[92dvh] rounded-sm bg-[#2B0910] text-[#FFF7E9] border-2 border-[#E5C46A] p-0 shadow-2xl overflow-y-auto"
+          className="m-auto w-[min(64rem,94vw)] max-h-[92dvh] rounded-sm bg-[#FFF7E9] text-[#29201D] border-2 border-[#B89555] p-0 shadow-2xl overflow-y-auto"
         >
           {activeItem && (
             <div className="relative p-4 sm:p-6">
               <OrnamentalFrameCorners
-                colorClass="text-[#E5C46A]/60"
+                colorClass="text-[#641A27]/60"
                 sizeClass="w-7 h-7"
               />
 
               {/* Top Controls */}
-              <div className="flex items-center justify-between gap-4 pb-4 border-b border-[#D9BE82]/30">
+              <div className="flex items-center justify-between gap-4 pb-4 border-b border-[#B89555]/40">
                 <div>
-                  <span className="text-xs uppercase tracking-[0.2em] text-[#E5C46A] font-semibold">
+                  <span className="text-xs uppercase tracking-[0.2em] text-[#B52632] font-bold">
                     {t(activeItem.categoryLabel)}
                   </span>
                   <h3
                     id="lightbox-dialog-title"
-                    className="font-serif text-xl sm:text-2xl font-bold text-[#FFF7E9]"
+                    className="font-serif text-xl sm:text-2xl font-bold text-[#641A27]"
                   >
                     {t(activeItem.title)}
                   </h3>
@@ -339,15 +334,15 @@ export function GallerySection() {
                   aria-label={
                     locale === "hi" ? "लाइटबॉक्स बंद करें" : "Close image preview"
                   }
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-sm bg-[#641A27] border border-[#D9BE82]/60 text-xs font-semibold text-[#FFF7E9] hover:bg-[#B52632] cursor-pointer min-h-[42px]"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-sm bg-[#FAF0DC] border border-[#B89555] text-xs font-bold text-[#641A27] hover:bg-[#641A27] hover:text-[#FFF7E9] cursor-pointer min-h-[42px]"
                 >
-                  <X aria-hidden="true" className="w-4 h-4 text-[#E5C46A]" />
+                  <X aria-hidden="true" className="w-4 h-4" />
                   <span>{locale === "hi" ? "बंद करें (Esc)" : "Close (Esc)"}</span>
                 </button>
               </div>
 
               {/* Image Stage */}
-              <div className="relative my-4 rounded-sm overflow-hidden bg-[#160407] border border-[#D9BE82]/40 max-h-[60dvh] flex items-center justify-center">
+              <div className="relative my-4 rounded-sm overflow-hidden bg-[#1D080D] border border-[#B89555] max-h-[60dvh] flex items-center justify-center">
                 <img
                   src={activeItem.src}
                   alt={t(activeItem.alt)}
@@ -365,7 +360,7 @@ export function GallerySection() {
                       aria-label={
                         locale === "hi" ? "पिछली तस्वीर" : "Previous image"
                       }
-                      className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#2B0910]/90 border border-[#E5C46A] text-[#FFF7E9] flex items-center justify-center hover:bg-[#641A27] cursor-pointer"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#FFF7E9]/95 border border-[#B89555] text-[#641A27] flex items-center justify-center hover:bg-[#E5C46A] shadow cursor-pointer"
                     >
                       <ChevronLeft aria-hidden="true" className="w-5 h-5" />
                     </button>
@@ -373,7 +368,7 @@ export function GallerySection() {
                       type="button"
                       onClick={showNext}
                       aria-label={locale === "hi" ? "अगली तस्वीर" : "Next image"}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#2B0910]/90 border border-[#E5C46A] text-[#FFF7E9] flex items-center justify-center hover:bg-[#641A27] cursor-pointer"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#FFF7E9]/95 border border-[#B89555] text-[#641A27] flex items-center justify-center hover:bg-[#E5C46A] shadow cursor-pointer"
                     >
                       <ChevronRight aria-hidden="true" className="w-5 h-5" />
                     </button>
@@ -382,13 +377,13 @@ export function GallerySection() {
               </div>
 
               {/* Caption & Direct Enquiry */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[#D9BE82]/30">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-3 border-t border-[#B89555]/40">
                 <div className="space-y-1 max-w-xl">
-                  <p className="text-xs sm:text-sm text-[#F2E3C9]/90">
+                  <p className="text-xs sm:text-sm text-[#29201D]/90">
                     {t(activeItem.caption)}
                   </p>
                   {activeItem.isPlaceholder && (
-                    <p className="text-[11px] text-[#E5C46A]">
+                    <p className="text-[11px] font-semibold text-[#B52632]">
                       {t(SITE_CONFIG.portfolioStatus.noticeBadge)}
                     </p>
                   )}
@@ -398,9 +393,9 @@ export function GallerySection() {
                   href={getWhatsAppUrl(activeItem.whatsappMessage)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-sm font-semibold text-xs sm:text-sm bg-gradient-to-r from-[#E5C46A] to-[#B89555] text-[#29201D] shrink-0"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-sm font-bold text-xs sm:text-sm bg-[#641A27] text-[#FFF7E9] border border-[#D9BE82] hover:bg-[#43101B] shrink-0"
                 >
-                  <MessageCircle aria-hidden="true" className="w-4 h-4" />
+                  <MessageCircle aria-hidden="true" className="w-4 h-4 text-[#E5C46A]" />
                   <span>
                     {locale === "hi"
                       ? "व्हाट्सएप पर कोटेशन लें"

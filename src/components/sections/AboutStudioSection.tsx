@@ -124,11 +124,11 @@ export function AboutStudioSection({
             </div>
           </div>
 
-          {/* Right Framed Collage Column */}
+          {/* Right Framed Collage Column (Light Parchment Card to Avoid Dark-on-Dark Nesting) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-sm bg-[#641A27] text-[#FFF7E9] border-2 border-[#D9BE82] p-6 sm:p-8 shadow-2xl space-y-6">
+            <div className="relative rounded-sm bg-[#FAF0DC] text-[#29201D] border-2 border-[#B89555] p-6 sm:p-8 shadow-xl space-y-6">
               <OrnamentalFrameCorners
-                colorClass="text-[#E5C46A]"
+                colorClass="text-[#641A27]"
                 sizeClass="w-8 h-8"
               />
 
@@ -145,7 +145,7 @@ export function AboutStudioSection({
               </div>
 
               <div className="grid grid-cols-2 gap-3">
-                <div className="aspect-[4/5] rounded-sm overflow-hidden border border-[#D9BE82]/60 relative">
+                <div className="aspect-[4/5] rounded-sm overflow-hidden border border-[#B89555] relative bg-[#FFF7E9] p-1">
                   <img
                     src="/images/wedding/bridal-portrait.png"
                     alt={
@@ -156,10 +156,10 @@ export function AboutStudioSection({
                     loading="lazy"
                     width={320}
                     height={400}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-sm"
                   />
                 </div>
-                <div className="aspect-[4/5] rounded-sm overflow-hidden border border-[#D9BE82]/60 relative">
+                <div className="aspect-[4/5] rounded-sm overflow-hidden border border-[#B89555] relative bg-[#FFF7E9] p-1">
                   <img
                     src="/images/invitations/royal-wedding-cards.png"
                     alt={
@@ -170,14 +170,14 @@ export function AboutStudioSection({
                     loading="lazy"
                     width={320}
                     height={400}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-sm"
                   />
                 </div>
               </div>
 
-              <div className="space-y-2.5 pt-2 border-t border-[#D9BE82]/30 text-xs sm:text-sm text-[#F2E3C9]">
+              <div className="space-y-2.5 pt-2 border-t border-[#B89555]/45 text-xs sm:text-sm text-[#29201D]/90 font-medium">
                 <div className="flex items-center gap-2.5">
-                  <Camera aria-hidden="true" className="w-4 h-4 text-[#E5C46A] shrink-0" />
+                  <Camera aria-hidden="true" className="w-4 h-4 text-[#B52632] shrink-0" />
                   <span>
                     {locale === "hi"
                       ? "विवाह, प्री-वेडिंग, सगाई एवं पारिवारिक फोटोग्राफी"
@@ -185,7 +185,7 @@ export function AboutStudioSection({
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <Film aria-hidden="true" className="w-4 h-4 text-[#E5C46A] shrink-0" />
+                  <Film aria-hidden="true" className="w-4 h-4 text-[#B52632] shrink-0" />
                   <span>
                     {locale === "hi"
                       ? "वेडिंग वीडियोग्राफी, सिनेमैटिक फिल्म्स व वीडियो एडिटिंग"
@@ -193,7 +193,7 @@ export function AboutStudioSection({
                   </span>
                 </div>
                 <div className="flex items-center gap-2.5">
-                  <Printer aria-hidden="true" className="w-4 h-4 text-[#E5C46A] shrink-0" />
+                  <Printer aria-hidden="true" className="w-4 h-4 text-[#B52632] shrink-0" />
                   <span>
                     {locale === "hi"
                       ? "शादी कार्ड, विज़िटिंग कार्ड, पोस्टर, पंपलेट एवं बैनर"

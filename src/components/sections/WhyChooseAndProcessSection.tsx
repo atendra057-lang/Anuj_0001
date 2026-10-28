@@ -217,21 +217,22 @@ export function WhyChooseAndProcessSection() {
           />
         </div>
 
+        {/* Light Warm Ivory Cards on Dark Maroon Background */}
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reasons.map((reason) => {
             const Icon = reason.icon;
             return (
               <div
                 key={reason.title.en}
-                className="relative rounded-sm bg-[#2B0910]/90 border border-[#D9BE82]/45 p-6 space-y-3 hover:border-[#E5C46A] transition-colors"
+                className="relative rounded-sm bg-[#FFF7E9] text-[#29201D] border-2 border-[#D9BE82] p-6 space-y-3 shadow-lg"
               >
-                <div className="w-11 h-11 rounded-sm bg-gradient-to-br from-[#E5C46A] to-[#B89555] text-[#29201D] flex items-center justify-center shadow">
+                <div className="w-11 h-11 rounded-sm bg-gradient-to-br from-[#E5C46A] to-[#B89555] text-[#29201D] flex items-center justify-center shadow-sm">
                   <Icon aria-hidden="true" className="w-5 h-5" />
                 </div>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#FFF7E9]">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#641A27]">
                   {t(reason.title)}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#F2E3C9]/85 leading-relaxed">
+                <p className="text-xs sm:text-sm text-[#29201D]/85 leading-relaxed">
                   {t(reason.description)}
                 </p>
               </div>
@@ -312,7 +313,7 @@ export function WhyChooseAndProcessSection() {
                 >
                   <div>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#641A27] text-[#E5C46A] font-serif font-bold text-lg">
+                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#E5C46A] text-[#29201D] border border-[#B89555] font-serif font-bold text-lg">
                         {stepObj.step}
                       </span>
                       <span
@@ -365,4 +366,3 @@ export function WhyChooseAndProcessSection() {
     </section>
   );
 }
-

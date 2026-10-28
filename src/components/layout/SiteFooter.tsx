@@ -14,6 +14,7 @@ import {
 import { useLanguage } from "@/context/LanguageContext";
 import {
   DecorativeDivider,
+  OrnamentalFrameCorners,
   RoyalCrestMonogram,
   ToranScallopBorder,
 } from "@/components/ornaments/IndianOrnaments";
@@ -27,21 +28,25 @@ export function SiteFooter() {
       <ToranScallopBorder className="text-[#D9BE82]/30" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-10">
-        {/* Top Ceremonial Invitation Banner inside Footer */}
-        <div className="relative rounded-sm border border-[#D9BE82]/40 bg-[#641A27]/60 p-6 sm:p-8 lg:p-10 mb-12 overflow-hidden">
+        {/* Top Ceremonial Invitation Banner inside Footer: Warm Ivory Box on Dark Maroon Footer */}
+        <div className="relative rounded-sm border-2 border-[#D9BE82] bg-[#FFF7E9] text-[#29201D] p-6 sm:p-8 lg:p-10 mb-12 shadow-xl">
+          <OrnamentalFrameCorners
+            colorClass="text-[#641A27]"
+            sizeClass="w-7 h-7 sm:w-9 sm:h-9"
+          />
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="text-xs uppercase tracking-[0.22em] text-[#E5C46A] font-semibold mb-2">
+              <p className="text-xs uppercase tracking-[0.22em] text-[#B52632] font-bold mb-2">
                 {locale === "hi"
                   ? "शुभ विवाह एवं उत्सव आमंत्रण"
                   : "Shubh Muhurat • Weddings & Print Craft"}
               </p>
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#FFF7E9]">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#641A27]">
                 {locale === "hi"
                   ? "अपने आगामी विवाह या प्रिंटिंग कार्य के लिए आज ही बात करें"
                   : "Planning a Wedding Celebration or Invitation Card Order?"}
               </h2>
-              <p className="mt-2 text-sm sm:text-base text-[#F2E3C9]/85">
+              <p className="mt-2 text-sm sm:text-base text-[#29201D]/85">
                 {locale === "hi"
                   ? "रामगंज, सीतापुर में 12 वर्षों के अनुभव के साथ हम आपके परिवार के हर उत्सव को यादगार बनाने के लिए तत्पर हैं।"
                   : "Speak directly with Anuj Studio and Graphics in Ramganj, Sitapur for tailored wedding photography packages, cinematic films, marriage cards, and printing quotations."}
@@ -53,18 +58,18 @@ export function SiteFooter() {
                 href={getWhatsAppUrl(WHATSAPP_MESSAGES.general)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-sm font-semibold text-sm bg-gradient-to-r from-[#E5C46A] via-[#D9BE82] to-[#B89555] text-[#29201D] hover:brightness-105 shadow-md"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-sm font-bold text-sm bg-[#641A27] text-[#FFF7E9] border border-[#D9BE82] hover:bg-[#43101B] shadow-md"
               >
-                <MessageCircle aria-hidden="true" className="w-4 h-4" />
+                <MessageCircle aria-hidden="true" className="w-4 h-4 text-[#E5C46A]" />
                 <span>
                   {locale === "hi" ? "व्हाट्सएप पर कोटेशन लें" : "Enquire on WhatsApp"}
                 </span>
               </a>
               <a
                 href={SITE_CONFIG.contact.phoneTel}
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-sm font-semibold text-sm border border-[#D9BE82]/70 text-[#FFF7E9] hover:bg-[#D9BE82]/15"
+                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-sm font-bold text-sm border-2 border-[#641A27] text-[#641A27] bg-[#FAF0DC] hover:bg-[#641A27] hover:text-[#FFF7E9] transition-colors"
               >
-                <Phone aria-hidden="true" className="w-4 h-4 text-[#E5C46A]" />
+                <Phone aria-hidden="true" className="w-4 h-4" />
                 <span>{SITE_CONFIG.contact.phoneDisplay}</span>
               </a>
             </div>
@@ -109,8 +114,8 @@ export function SiteFooter() {
                 : "Serving Ramganj, Sitapur, Uttar Pradesh with 12 years of dedicated experience in Indian wedding photography, wedding videography, video editing, marriage invitation cards, and commercial printing."}
             </p>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-[#641A27]/80 border border-[#D9BE82]/40 text-xs text-[#E5C46A] font-medium">
-              <Sparkles aria-hidden="true" className="w-4 h-4 shrink-0" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-2 rounded-sm bg-[#FFF7E9] text-[#641A27] border border-[#D9BE82] text-xs font-bold">
+              <Sparkles aria-hidden="true" className="w-4 h-4 text-[#B52632] shrink-0" />
               <span>
                 {locale === "hi"
                   ? "१२ वर्षों का अनुभव • फोटोग्राफी एवं प्रिंटिंग"
@@ -232,7 +237,7 @@ export function SiteFooter() {
                 <Link
                   key={nav.href}
                   href={nav.href}
-                  className="text-xs px-2.5 py-1 rounded-sm bg-[#641A27]/50 border border-[#D9BE82]/25 text-[#F2E3C9] hover:border-[#E5C46A] hover:text-[#E5C46A]"
+                  className="text-xs px-2.5 py-1 rounded-sm bg-[#FFF7E9] text-[#29201D] font-semibold border border-[#D9BE82] hover:bg-[#E5C46A] transition-colors"
                 >
                   {t(nav.label)}
                 </Link>
@@ -259,4 +264,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-

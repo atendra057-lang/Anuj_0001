@@ -66,10 +66,10 @@ export function CommercialPrintingSection() {
 
         {/* Top Editorial Commercial Print Feature + Cards Grid */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left Visual Showcase Card */}
-          <div className="lg:col-span-5 rounded-sm bg-[#3A2D28] border border-[#D9BE82]/50 p-5 sm:p-6 flex flex-col justify-between shadow-xl">
+          {/* Left Visual Showcase Card (Light Ivory on Dark Charcoal Background) */}
+          <div className="lg:col-span-5 rounded-sm bg-[#FAF0DC] text-[#29201D] border-2 border-[#D9BE82] p-5 sm:p-6 flex flex-col justify-between shadow-xl">
             <div>
-              <div className="relative aspect-[16/11] rounded-sm overflow-hidden border border-[#D9BE82]/40 mb-5">
+              <div className="relative aspect-[16/11] rounded-sm overflow-hidden border border-[#B89555] mb-5 bg-[#FFF7E9] p-1">
                 <img
                   src="/images/printing/commercial-print-showcase.png"
                   alt={
@@ -80,31 +80,31 @@ export function CommercialPrintingSection() {
                   loading="lazy"
                   width={600}
                   height={412}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-sm"
                 />
-                <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-sm bg-[#21070C]/85 text-[10px] text-[#E5C46A] border border-[#D9BE82]/40">
+                <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-sm bg-[#FFF7E9]/95 text-[10px] font-bold text-[#641A27] border border-[#B89555]">
                   {locale === "hi" ? "प्रतीकात्मक झलक" : "Illustrative Preview"}
                 </span>
               </div>
 
-              <span className="text-xs uppercase tracking-[0.2em] text-[#E5C46A] font-semibold">
+              <span className="text-xs uppercase tracking-[0.2em] text-[#B52632] font-bold">
                 {locale === "hi"
                   ? "स्पष्ट डिज़ाइन • विश्वसनीय छपाई"
                   : "Graphic Design & Print Under One Roof"}
               </span>
-              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#FFF7E9] mt-1">
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#641A27] mt-1">
                 {locale === "hi"
                   ? "अपने व्यापार और कार्यक्रम की पहचान को मजबूत बनाएं"
                   : "Designed for Readability, Built for Local Impact"}
               </h3>
-              <p className="mt-2.5 text-sm text-[#F2E3C9]/85 leading-relaxed">
+              <p className="mt-2.5 text-sm text-[#29201D]/85 leading-relaxed">
                 {locale === "hi"
                   ? "चाहे नई दुकान के लिए विज़िटिंग कार्ड और बैनर बनवाना हो, स्कूल/कोचिंग के लिए पंपलेट व पोस्टर छपवाने हों, या किसी सामाजिक कार्यक्रम की प्रचार सामग्री तैयार करानी हो—हम डिज़ाइन से छपाई तक पूरी सहायता करते हैं।"
                   : "Whether you are launching a new shop in Ramganj, promoting an educational batch, or putting up welcome banners for a community function, we handle both the Hindi/English layout design and printing coordination."}
               </p>
             </div>
 
-            <div className="mt-6 pt-5 border-t border-[#D9BE82]/25">
+            <div className="mt-6 pt-5 border-t border-[#B89555]/45">
               <WhatsAppButton
                 message={WHATSAPP_MESSAGES.commercialPrinting}
                 label={
@@ -112,7 +112,7 @@ export function CommercialPrintingSection() {
                     ? "अपनी प्रिंटिंग आवश्यकता पर चर्चा करें"
                     : "Discuss Your Printing Requirement"
                 }
-                variant="gold"
+                variant="maroon"
                 size="md"
                 className="w-full"
               />

@@ -102,7 +102,7 @@ export function ExperienceTrustSection() {
                 </p>
 
                 {/* Embedded Bridal Thumbnail Frame */}
-                <div className="mt-5 w-full overflow-hidden rounded-sm border border-[#D9BE82]/60 aspect-[16/10] relative">
+                <div className="mt-5 w-full overflow-hidden rounded-sm border border-[#D9BE82] bg-[#FFF7E9] p-1 aspect-[16/10] relative">
                   <img
                     src="/images/wedding/pheras-ceremony.png"
                     alt={
@@ -113,9 +113,9 @@ export function ExperienceTrustSection() {
                     loading="lazy"
                     width={600}
                     height={375}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover rounded-sm"
                   />
-                  <span className="absolute bottom-2 right-2 px-2 py-0.5 rounded-sm bg-[#2B0910]/85 text-[10px] text-[#E5C46A] border border-[#D9BE82]/40">
+                  <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-sm bg-[#FFF7E9]/95 text-[10px] font-bold text-[#641A27] border border-[#B89555]">
                     {locale === "hi" ? "प्रतीकात्मक झलक" : "Illustrative Preview"}
                   </span>
                 </div>

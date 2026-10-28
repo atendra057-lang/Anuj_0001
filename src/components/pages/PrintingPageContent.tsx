@@ -89,7 +89,7 @@ export function PrintingPageContent() {
                 ? "प्रिंटिंग कोटेशन मांगें"
                 : "Request a Printing Quote"
             }
-            variant="vermilion"
+            variant="outline-gold"
             size="lg"
           />
           <PhoneCallButton variant="outline-gold" size="lg" />

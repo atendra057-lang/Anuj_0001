@@ -1,37 +1,10 @@
 import type { Metadata } from "next";
-import {
-  Cormorant_Garamond,
-  Plus_Jakarta_Sans,
-  Noto_Sans_Devanagari,
-} from "next/font/google";
 import "./globals.css";
 import { SITE_CONFIG } from "@/data/siteConfig";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { MobileContactBar } from "@/components/layout/MobileContactBar";
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
-  display: "swap",
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans",
-  display: "swap",
-});
-
-const notoDevanagari = Noto_Sans_Devanagari({
-  subsets: ["devanagari"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-hindi",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.seo.siteUrl),
@@ -146,10 +119,19 @@ export default function RootLayout({
   };
 
   return (
-    <html
-      lang="en"
-      className={`${cormorant.variable} ${jakarta.variable} ${notoDevanagari.variable}`}
-    >
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        />
+      </head>
       <body className="min-h-screen flex flex-col antialiased selection:bg-[#641A27] selection:text-[#E5C46A]">
         {/* Skip to Main Content for Keyboard Accessibility */}
         <a

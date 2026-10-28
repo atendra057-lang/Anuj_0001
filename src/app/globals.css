@@ -4,6 +4,10 @@
   /* Opt-in to intrinsic keyword interpolation (animate-to-intrinsic-sizes) */
   interpolate-size: allow-keywords;
 
+  --font-serif: "Cormorant Garamond", Georgia, Cambria, "Times New Roman", serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-hindi: "Noto Sans Devanagari", "Plus Jakarta Sans", sans-serif;
+
   --color-maroon: #641A27;
   --color-wine: #43101B;
   --color-vermilion: #B52632;

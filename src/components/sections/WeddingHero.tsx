@@ -13,133 +13,124 @@ export function WeddingHero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-gradient-to-br from-[#2B0910] via-[#43101B] to-[#561623] text-[#FFF7E9] border-b-2 border-[#D9BE82]/50"
+      className="relative overflow-hidden min-h-[580px] sm:min-h-[650px] lg:min-h-[740px] flex items-center bg-[#2B0910] text-[#FFF7E9] border-b-2 border-[#D9BE82]"
     >
-      {/* Subtle Ambient Warm Glow */}
+      {/* Full-Bleed Hero Background Photograph with Floral Arch & Cascading Rose Petals */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/images/hero/floral-petal-shower.jpg"
+          alt={
+            locale === "hi"
+              ? "फूलों की वर्षा और पुष्प सजावट के बीच प्रसन्न भारतीय दूल्हा और दुल्हन"
+              : "Joyful Indian bride and groom celebrating beneath a shower of rose petals and floral decorations"
+          }
+          fetchPriority="high"
+          width={1920}
+          height={1080}
+          className="w-full h-full object-cover object-[72%_center] sm:object-[68%_center] lg:object-center"
+        />
+
+        {/* Directional Scrim for Crisp Typography on Left while Keeping Floral & Couple Vibrant on Right */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-r from-[#21070C]/92 via-[#380D16]/70 to-[#21070C]/15 sm:via-[#380D16]/55 lg:from-[#21070C]/88 lg:via-[#380D16]/45 lg:to-transparent"
+        />
+
+        {/* Subtle Bottom Vignette for Grounded Section Transition */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#21070C]/80 via-[#21070C]/30 to-transparent"
+        />
+      </div>
+
+      {/* Subtle Ornamental Gold Frame Inset Around the Full-Bleed Hero */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,rgba(229,196,106,0.12),transparent_60%)] pointer-events-none"
+        className="pointer-events-none absolute inset-3 sm:inset-5 border border-[#E5C46A]/35 rounded-sm z-10"
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-          {/* Left Column: Clean, High-Contrast Editorial Typography */}
-          <div className="lg:col-span-7 space-y-6">
-            {/* Single Clean Eyebrow Badge (Light Ivory Pill on Dark Maroon Background) */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF7E9] text-[#641A27] border border-[#D9BE82] shadow-sm">
-              <Sparkles aria-hidden="true" className="w-3.5 h-3.5 text-[#B52632]" />
-              <span className="text-xs font-bold uppercase tracking-[0.18em]">
-                {locale === "hi"
-                  ? "१२ वर्षों का अनुभव • वेडिंग फोटोग्राफी एवं प्रिंटिंग"
-                  : `${SITE_CONFIG.experienceYears} Years of Experience • Weddings & Print`}
-              </span>
-            </div>
-
-            {/* Grand Headline & Concise Lead Copy */}
-            <div className="space-y-4">
-              <h1
-                id="hero-heading"
-                className="font-serif text-4xl sm:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight text-[#FFF7E9]"
-              >
-                {locale === "hi" ? (
-                  <>
-                    हर <span className="text-[#E5C46A] italic">शादी</span> की एक
-                    कहानी होती है, जिसे सदा के लिए याद रखा जाए।
-                  </>
-                ) : (
-                  <>
-                    Every <span className="text-[#E5C46A] italic">Shaadi</span>{" "}
-                    Has a Story Worth Remembering.
-                  </>
-                )}
-              </h1>
-
-              <p className="text-base sm:text-lg lg:text-xl text-[#FFF7E9]/90 leading-relaxed max-w-xl">
-                {locale === "hi"
-                  ? "जीवन के सबसे पावन उत्सवों के लिए वेडिंग फोटोग्राफी, सिनेमैटिक फिल्म्स और सुंदर शादी कार्ड व प्रिंटिंग सेवाएं।"
-                  : "Wedding photography, cinematic films, and beautifully printed marriage invitations for life's most cherished celebrations."}
-              </p>
-            </div>
-
-            {/* Primary & Secondary High-Contrast CTAs (Gold + Warm Ivory, Zero Red-on-Red) */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              <WhatsAppButton
-                message={WHATSAPP_MESSAGES.general}
-                label={
-                  locale === "hi"
-                    ? "व्हाट्सएप पर पूछताछ करें"
-                    : "Enquire on WhatsApp"
-                }
-                variant="gold"
-                size="lg"
-              />
-
-              <Link
-                href="/photography-videography"
-                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-sm font-semibold text-sm sm:text-base bg-[#FFF7E9] text-[#29201D] border border-[#D9BE82] hover:bg-[#F2E3C9] shadow-md transition-colors min-h-[52px]"
-              >
-                <span>
-                  {locale === "hi"
-                    ? "फोटोग्राफी सेवाएं देखें"
-                    : "Explore Wedding Photography"}
-                </span>
-                <ArrowRight aria-hidden="true" className="w-4 h-4 text-[#641A27]" />
-              </Link>
-            </div>
-
-            {/* Simple, Readable Location Line */}
-            <div className="pt-4 border-t border-[#D9BE82]/25 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-[#F2E3C9]/90">
-              <span className="inline-flex items-center gap-1.5 font-medium">
-                <MapPin aria-hidden="true" className="w-4 h-4 text-[#E5C46A]" />
-                <span>{t(SITE_CONFIG.location.displayFull)}</span>
-              </span>
-              <span aria-hidden="true" className="hidden sm:inline text-[#D9BE82]/40">
-                •
-              </span>
-              <Link
-                href="/wedding-cards-printing"
-                className="font-semibold text-[#E5C46A] hover:text-[#FFF7E9] underline underline-offset-4"
-              >
-                {locale === "hi"
-                  ? "शादी कार्ड एवं प्रिंटिंग देखें →"
-                  : "View Wedding Cards & Printing →"}
-              </Link>
-            </div>
+      {/* Foreground Hero Content */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 py-16 sm:py-24 lg:py-28">
+        <div className="max-w-2xl space-y-6">
+          {/* Single Clean Eyebrow Badge (Light Warm Ivory Pill) */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FFF7E9]/95 text-[#641A27] border border-[#D9BE82] shadow-md">
+            <Sparkles aria-hidden="true" className="w-3.5 h-3.5 text-[#B52632]" />
+            <span className="text-xs font-bold uppercase tracking-[0.18em]">
+              {locale === "hi"
+                ? "१२ वर्षों का अनुभव • वेडिंग फोटोग्राफी एवं प्रिंटिंग"
+                : `${SITE_CONFIG.experienceYears} Years of Experience • Weddings & Print`}
+            </span>
           </div>
 
-          {/* Right Column: Clean Warm-Ivory Framed Arch Portrait */}
-          <div className="lg:col-span-5">
-            <div className="mx-auto max-w-md lg:max-w-none">
-              {/* Light Ivory Frame on Dark Maroon Hero Background for Crisp Separation */}
-              <div className="p-3 sm:p-4 rounded-t-[10rem] rounded-b-sm bg-[#FFF7E9] text-[#29201D] border-2 border-[#D9BE82] shadow-[0_24px_60px_rgba(0,0,0,0.5)]">
-                <div className="relative overflow-hidden rounded-t-[9.2rem] rounded-b-sm border border-[#B89555] aspect-[4/5] bg-[#F2E3C9]">
-                  <img
-                    src="/images/hero/royal-mandap-couple.png"
-                    alt={
-                      locale === "hi"
-                        ? "फूलों के भव्य मंडप के नीचे भारतीय दूल्हा और दुल्हन का प्रतीकात्मक पोर्ट्रेट"
-                        : "Illustrative Indian wedding couple portrait beneath an ornate floral mandap"
-                    }
-                    fetchPriority="high"
-                    width={800}
-                    height={1000}
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
+          {/* Grand Headline & Concise Supporting Copy */}
+          <div className="space-y-4">
+            <h1
+              id="hero-heading"
+              className="font-serif text-4xl sm:text-5xl xl:text-6xl font-bold leading-[1.08] tracking-tight text-[#FFF7E9] drop-shadow-[0_2px_16px_rgba(0,0,0,0.45)]"
+            >
+              {locale === "hi" ? (
+                <>
+                  हर <span className="text-[#E5C46A] italic">शादी</span> की एक
+                  कहानी होती है, जिसे सदा के लिए याद रखा जाए।
+                </>
+              ) : (
+                <>
+                  Every <span className="text-[#E5C46A] italic">Shaadi</span>{" "}
+                  Has a Story Worth Remembering.
+                </>
+              )}
+            </h1>
 
-                {/* Clean Light Caption Bar Below Photo */}
-                <div className="pt-3 px-1 flex items-center justify-between gap-2 text-xs">
-                  <span className="font-serif font-bold text-sm text-[#641A27]">
-                    {locale === "hi"
-                      ? "शुभ विवाह • मंडप एवं वरमाला"
-                      : "Indian Weddings • Films • Invitations"}
-                  </span>
-                  <span className="px-2 py-0.5 rounded-sm bg-[#F2E3C9] border border-[#B89555]/50 text-[11px] text-[#29201D]/80 font-medium">
-                    {locale === "hi" ? "प्रतीकात्मक झलक" : "Illustrative Preview"}
-                  </span>
-                </div>
-              </div>
-            </div>
+            <p className="text-base sm:text-lg lg:text-xl text-[#FFF7E9]/95 leading-relaxed max-w-xl drop-shadow-[0_1px_10px_rgba(0,0,0,0.45)]">
+              {locale === "hi"
+                ? "जीवन के सबसे पावन उत्सवों के लिए वेडिंग फोटोग्राफी, सिनेमैटिक फिल्म्स और सुंदर शादी कार्ड व प्रिंटिंग सेवाएं।"
+                : "Wedding photography, cinematic films, and beautifully printed marriage invitations for life's most cherished celebrations."}
+            </p>
+          </div>
+
+          {/* High-Contrast Primary & Secondary Action Buttons */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+            <WhatsAppButton
+              message={WHATSAPP_MESSAGES.general}
+              label={
+                locale === "hi"
+                  ? "व्हाट्सएप पर पूछताछ करें"
+                  : "Enquire on WhatsApp"
+              }
+              variant="gold"
+              size="lg"
+            />
+
+            <Link
+              href="/photography-videography"
+              className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3.5 sm:py-4 rounded-sm font-semibold text-sm sm:text-base bg-[#FFF7E9] text-[#29201D] border border-[#D9BE82] hover:bg-[#F2E3C9] shadow-lg transition-colors min-h-[52px]"
+            >
+              <span>
+                {locale === "hi"
+                  ? "फोटोग्राफी सेवाएं देखें"
+                  : "Explore Wedding Photography"}
+              </span>
+              <ArrowRight aria-hidden="true" className="w-4 h-4 text-[#641A27]" />
+            </Link>
+          </div>
+
+          {/* Clean Studio Location & Printing Link Bar */}
+          <div className="pt-4 border-t border-[#E5C46A]/35 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-[#FFF7E9]">
+            <span className="inline-flex items-center gap-1.5 font-medium drop-shadow">
+              <MapPin aria-hidden="true" className="w-4 h-4 text-[#E5C46A]" />
+              <span>{t(SITE_CONFIG.location.displayFull)}</span>
+            </span>
+            <span aria-hidden="true" className="hidden sm:inline text-[#E5C46A]/60">
+              •
+            </span>
+            <Link
+              href="/wedding-cards-printing"
+              className="font-semibold text-[#E5C46A] hover:text-[#FFF7E9] underline underline-offset-4 drop-shadow"
+            >
+              {locale === "hi"
+                ? "शादी कार्ड एवं प्रिंटिंग देखें →"
+                : "View Wedding Cards & Printing →"}
+            </Link>
           </div>
         </div>
       </div>

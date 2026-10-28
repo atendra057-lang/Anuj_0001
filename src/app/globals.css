@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+:root {
+  /* Opt-in to intrinsic keyword interpolation (animate-to-intrinsic-sizes) */
+  interpolate-size: allow-keywords;
+
+  --color-maroon: #641A27;
+  --color-wine: #43101B;
+  --color-vermilion: #B52632;
+  --color-sindoor: #D13B35;
+  --color-gold-antique: #B89555;
+  --color-gold-champagne: #D9BE82;
+  --color-gold-bright: #E5C46A;
+  --color-ivory: #FFF7E9;
+  --color-parchment: #F2E3C9;
+  --color-charcoal: #29201D;
+  --color-sage: #6C7C60;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #2B0910;
+  color: #29201D;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  background-color: #FFF7E9;
+  color: #29201D;
+  overflow-x: hidden;
+}
+
+.font-serif {
+  font-family: var(--font-serif), Georgia, Cambria, "Times New Roman", serif;
+}
+
+.font-hindi {
+  font-family: var(--font-hindi), var(--font-sans), sans-serif;
+}
+
+/* Balanced headings & pretty body copy (improve-text-layout-and-legibility) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+li,
+blockquote {
+  text-wrap: pretty;
+}
+
+/* Native modal dialog scroll containment (prevent-page-scroll-under-modal-dialog) */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background-color: rgba(22, 4, 8, 0.82);
+  backdrop-filter: blur(3px);
+}
+
+/* Native <details> summary marker reset & smooth intrinsic disclosure */
+details.faq-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.faq-details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size 0.3s ease-out, content-visibility 0.3s ease-out allow-discrete;
+}
+
+details.faq-details[open]::details-content {
+  block-size: auto;
+}
+
+/* Form validation with :user-invalid (required-field-feedback) */
+.error-msg {
+  display: none;
+}
+
+.form-input-royal:user-invalid,
+.form-input-royal[aria-invalid="true"] {
+  border-color: #B52632;
+  border-width: 2px;
+  background-color: #FFF0EE;
+}
+
+.form-input-royal:user-invalid + .error-msg,
+.form-input-royal[aria-invalid="true"] + .error-msg {
+  display: block;
+}
+
+.form-input-royal:required:user-valid {
+  border-color: #6C7C60;
+}
+
+/* Subtle Indian Invitation Parchment & Geometric Jali Lattice Pattern */
+.parchment-pattern {
+  background-image: radial-gradient(
+      rgba(184, 149, 85, 0.14) 1px,
+      transparent 1px
+    ),
+    radial-gradient(rgba(100, 26, 39, 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+/* Restrained Ornamental Motion (respects prefers-reduced-motion) */
+@keyframes slow-mandala-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-ornament-rotate {
+    animation: slow-mandala-spin 90s linear infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after,
+  details.faq-details::details-content {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
